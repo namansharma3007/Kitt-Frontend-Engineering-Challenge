@@ -1,0 +1,92 @@
+{
+    "flights": [
+        {
+            "id": 1,
+            "flight1": {
+                "airline": "Emirates",
+                "code": "AT 4334",
+                "time": "9:45 AM - 11:45 AM",
+                "duration": "2h 10min",
+                "type": "Non stop",
+                "image": "/emirates.png",
+                "dayAddition": null
+            },
+            "flight2": {
+                "airline": "Lufthansa",
+                "code": "AT 4334",
+                "time": "11:45 AM - 6:45 AM",
+                "duration": "4h 10min",
+                "type": "2 stops",
+                "image": "/lufthansa.png",
+                "dayAddition": "+1 day"
+            },
+            "price": "AED 2,456.90"
+        },
+        {
+            "id": 2,
+            "flight1": {
+                "airline": "Emirates",
+                "code": "AT 4334",
+                "time": "9:45 AM - 11:45 AM",
+                "duration": "7h 10min",
+                "type": "1 stop",
+                "image": "/emirates.png",
+                "dayAddition": null
+            },
+            "flight2": {
+                "airline": "Emirates",
+                "code": "AT 4334",
+                "time": "11:45 AM - 6:45 AM",
+                "duration": "19h 10min",
+                "type": "2 stops",
+                "image": "/lufthansa.png",
+                "dayAddition": "+1 day"
+            },
+            "price": "AED 2,790.90"
+        },
+        {
+            "id": 3,
+            "flight1": {
+                "airline": "Lufthansa",
+                "code": "AT 4334",
+                "time": "9:45 AM - 11:45 AM",
+                "duration": "7h 10min",
+                "type": "non stop",
+                "image": "/lufthansa.png",
+                "dayAddition": null
+            },
+            "flight2": {
+                "airline": "Emirates",
+                "code": "AT 4334",
+                "time": "11:45 AM - 6:45 AM",
+                "duration": "4h 10min",
+                "type": "non stops",
+                "image": "/emirates.png",
+                "dayAddition": "+1 day"
+            },
+            "price": "AED 1,456.90"
+        },
+        {
+            "id": 4,
+            "flight1": {
+                "airline": "Lufthansa",
+                "code": "AT 4334",
+                "time": "9:45 AM - 11:45 AM",
+                "duration": "7h 10min",
+                "type": "2 stop",
+                "image": "/lufthansa.png",
+                "dayAddition": null
+            },
+            "flight2": {
+                "airline": "Emirates",
+                "code": "AT 4334",
+                "time": "11:45 AM - 6:45 AM",
+                "duration": "4h 10min",
+                "type": "non stops",
+                "image": "/emirates.png",
+                "dayAddition": "+1 day"
+            },
+            "price": "AED 3,556.90"
+        }
+    ]
+}
