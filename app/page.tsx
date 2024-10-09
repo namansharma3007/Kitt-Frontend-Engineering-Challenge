@@ -3,7 +3,8 @@ import { useState } from "react";
 import SearchFlights from "@/components/SearchFlights";
 
 export default function Page() {
-  const [greeting, setGreeting] = useState<string>(getGreeting());
+  
+  const greeting = getGreeting();
 
   return (
     <div className="w-screen md:h-1/2 h-screen flex flex-col gap-3 items-center justify-center md:mx-0 mx-2">
