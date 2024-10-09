@@ -5,7 +5,6 @@ interface Airport {
   country: string;
 }
 
-
 interface FlightInput {
   fromAirport: Airport;
   toAirport: Airport;
@@ -15,23 +14,17 @@ interface FlightInput {
 
 interface FlightData {
   id: number;
-  flight1: {
-      airline: string;
-      code: string;
-      time: string;
-      duration: string;
-      type: string;
-      image: string;
-      dayAddition?: string | null; // Optional field for additional day
-  };
-  flight2: {
-      airline: string;
-      code: string;
-      time: string;
-      duration: string;
-      type: string;
-      image: string;
-      dayAddition?: string | null; // Optional field for additional day
-  };
+  flight1: Flight;
+  flight2:Flight;
   price: string; // Price of the flights
+}
+
+interface Flight {
+  airline: string;
+  code: string;
+  time: string;
+  duration: string;
+  type: string;
+  image: string;
+  dayAddition?: string | null;
 }

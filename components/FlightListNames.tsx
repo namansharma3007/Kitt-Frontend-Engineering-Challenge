@@ -57,8 +57,8 @@ function FlightsDetails({
   currentAirports,
   openTabSet,
 }: {
-  flight1: any;
-  flight2: any;
+  flight1: Flight;
+  flight2: Flight;
   price: string;
   currentAirports: Airport[];
   openTabSet: ()=>void;
