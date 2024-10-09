@@ -100,6 +100,8 @@ export default function ResultsSearchBar({
 
     dispatch(setDepartureDate(startDate.toISOString()));
     dispatch(setReturnDate(endDate.toISOString()));
+
+    openTabSet();
   }
 
   useEffect(() => {
@@ -210,7 +212,6 @@ export default function ResultsSearchBar({
           <Button
             className="bg-green-p flex items-center gap-4 px-10 hover:bg-green-950"
             type="submit"
-            onClick={openTabSet}
           >
             <IoSearchOutline className="text-[14px]" />
             <span>Search flights</span>
