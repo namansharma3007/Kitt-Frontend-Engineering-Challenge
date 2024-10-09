@@ -1,6 +1,23 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { FaRegCircleCheck } from "react-icons/fa6";
 
 export default function LoadingCard() {
+  const [loading1, setLoading1] = useState<boolean>(true);
+  const [loading2, setLoading2] = useState<boolean>(true);
+  const [loading3, setLoading3] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading1(false);
+    }, 1000);
+    setTimeout(() => {
+      setLoading2(false);
+    }, 2000);
+    setTimeout(() => {
+      setLoading3(false);
+    }, 3000);
+  }, []);
   return (
     <div className="flex flex-col gap-4 items-center w-64 h-60 justify-center absolute top-36 left-1/2 transform -translate-x-1/2 bg-white p-4 shadow-lg rounded-lg">
       <Image
@@ -11,17 +28,44 @@ export default function LoadingCard() {
         className="inset-0 object-cover"
       />
       <div className="flex flex-col">
-        <div className="flex gap-3">
-          <LoadingSpinner />
-          <span>Searching 400+ flights</span>
+        <div className="flex gap-3 items-center">
+          {loading1 ? (
+            <>
+              <LoadingSpinner />
+              <span className="text-gray-300">Searching 400+ flights</span>
+            </>
+          ) : (
+            <>
+              <FaRegCircleCheck className="text-green-600 text-md"/>
+              <span>Searching 400+ flights</span>
+            </>
+          )}
         </div>
-        <div className="flex gap-3">
-          <LoadingSpinner />
-          <span>Attaching company rules</span>
+        <div className="flex gap-3 items-center">
+        {loading2 ? (
+            <>
+              <LoadingSpinner />
+              <span className="text-gray-300">Attaching company rules</span>
+            </>
+          ) : (
+            <>
+              <FaRegCircleCheck className="text-green-600 text-md"/>
+              <span>Attaching company rules</span>
+            </>
+          )}
         </div>
-        <div className="flex gap-3">
-          <LoadingSpinner />
-          <span>Serving best results</span>
+        <div className="flex gap-3 items-center">
+        {loading3 ? (
+            <>
+              <LoadingSpinner />
+              <span className="text-gray-300">Serving best results</span>
+            </>
+          ) : (
+            <>
+              <FaRegCircleCheck className="text-green-600 text-md"/>
+              <span>Serving best results</span>
+            </>
+          )}
         </div>
       </div>
     </div>

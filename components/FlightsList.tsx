@@ -31,7 +31,7 @@ export default function FlightsList() {
       } finally{
         setTimeout(()=>{
           setLoading(false);
-        }, 2000)
+        }, 3500)
       }
     }
     function getCurrentAirports(){
