@@ -21,7 +21,7 @@ import {
 
 import { DatePickerDemo } from "./ui/datePicker";
 import { Button } from "./ui/button";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 // import { ComboBox } from "./ui/comboBox";
 
 export default function SearchFlights() {
@@ -53,20 +53,20 @@ export default function SearchFlights() {
     event.preventDefault();
 
     if (!from || !to || !startDate || !endDate) {
-      toast.error("Please fill in all the fields");
+      toast.warning("Please fill in all the fields");
       return;
     }
     if (from === to) {
-      toast.error("Please select different airports");
+      toast.warning("Please select different airports");
       return;
     }
     if (startDate < new Date()) {
-      toast.error("Start date should be greater than today");
+      toast.warning("Start date should be greater than today");
       return;
     }
 
     if (startDate > endDate) {
-      toast.error("End date should be greater than start date");
+      toast.warning("End date should be greater than start date");
       return;
     }
 
@@ -74,7 +74,7 @@ export default function SearchFlights() {
     const saveTo = airports?.find((airport) => airport.code === to);
 
     if (!saveFrom || !saveTo) {
-      toast.error("Selected airports not found");
+      toast.warning("Selected airports not found");
       return;
     }
 

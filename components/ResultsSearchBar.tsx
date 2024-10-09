@@ -22,7 +22,7 @@ import {
 
 import { DatePickerDemo } from "./ui/datePicker";
 import { Button } from "./ui/button";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 
 export default function ResultsSearchBar({
   openTopSearchBar,
@@ -35,8 +35,8 @@ export default function ResultsSearchBar({
   const [loading, setLoading] = useState<boolean>(true);
   const [from, setFromLocation] = useState<string | null>(null);
   const [to, setToLocation] = useState<string | null>(null);
-  const [startDate, setStartDate] = useState<Date | undefined>();
-  const [endDate, setEndDate] = useState<Date | undefined>();
+  const [startDate, setStartDate] = useState<Date | undefined>(undefined);
+  const [endDate, setEndDate] = useState<Date | undefined>(undefined);
 
   const dispatch = useDispatch();
 
@@ -55,24 +55,35 @@ export default function ResultsSearchBar({
     }
   }
 
+  function checkIfSame(from: string | null, to: string | null, startDate: Date | undefined, endDate: Date | undefined) {
+    if(from == flightInput.fromAirport.code && to == flightInput.toAirport.code && startDate?.toISOString() == flightInput.departureDate && endDate?.toISOString() == flightInput.returnDate) {
+      return true;
+    }
+    return false;
+  }
+
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+    if(checkIfSame(from, to, startDate, endDate)) {
+      openTabSet();
+      return;
+    }
 
     if (!from || !to || !startDate || !endDate) {
-      toast.error("Please fill in all the fields");
+      toast.warning("Please fill in all the fields");
       return;
     }
     if (from === to) {
-      toast.error("Please select different airports");
+      toast.warning("Please select different airports");
       return;
     }
     if (startDate < new Date()) {
-      toast.error("Start date should be greater than today");
+      toast.warning("Start date should be greater than today");
       return;
     }
 
     if (startDate > endDate) {
-      toast.error("End date should be greater than start date");
+      toast.warning("End date should be greater than start date");
       return;
     }
 
@@ -80,7 +91,7 @@ export default function ResultsSearchBar({
     const saveTo = airports?.find((airport) => airport.code === to);
 
     if (!saveFrom || !saveTo) {
-      toast.error("Selected airports not found");
+      toast.warning("Selected airports not found");
       return;
     }
 

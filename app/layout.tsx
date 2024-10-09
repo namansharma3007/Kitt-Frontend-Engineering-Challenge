@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Toaster } from "react-hot-toast";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import Provider from "@/redux/provider";
 import "./globals.css";
@@ -21,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="w-screen h-screen">
         <div>
-          <Toaster />
+          <ToastContainer />
         </div>
         <Provider>{children}</Provider>
       </body>

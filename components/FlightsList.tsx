@@ -1,7 +1,7 @@
 import FlightsShadowList from "./FlightsShadowList";
 import FlightListNames from "./FlightListNames";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import {toast} from "react-toastify";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 
