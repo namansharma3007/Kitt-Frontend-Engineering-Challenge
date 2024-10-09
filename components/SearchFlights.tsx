@@ -22,8 +22,7 @@ import {
 import { DatePickerDemo } from "./ui/datePicker";
 import { Button } from "./ui/button";
 import { toast } from "react-hot-toast";
-import { ComboBox } from "./ui/comboBox";
-import { set } from "date-fns";
+// import { ComboBox } from "./ui/comboBox";
 
 export default function SearchFlights() {
   const [airports, setAirports] = useState<Airport[] | null>(null);
