@@ -2,7 +2,7 @@ import LoadingCard from "./LoadingCard";
 
 export default function FlightsShadowList() {
   return (
-    <div className="w-full mt-32  px-24 flex flex-col items-center gap-4">
+    <div className="w-full mt-32  px-24 flex flex-col items-center gap-4 bg-white">
       <SkeletonLoadingFlightsTab />
       <SkeletonLoadingFlightsTab />
       <SkeletonLoadingFlightsTab />
