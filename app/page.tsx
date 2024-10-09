@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import SearchFlights from "@/components/SearchFlights";
 
 export default function Page() {
