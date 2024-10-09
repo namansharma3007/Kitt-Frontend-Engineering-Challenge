@@ -33,7 +33,7 @@ export default function SideSlideBar({
     <div
       className={`${
         openSideBar ? "right-0" : "-right-[50rem]"
-      } w-1/2 h-full bg-transparent fixed top-0 z-20 py-4 px-4 ease-in-out duration-300`}
+      } w-1/2 h-full bg-transparent fixed top-0 z-20 py-4 px-4 ease-in-out duration-500`}
     >
       <div className="w-full h-full bg-white rounded-lg flex flex-col py-4 px-6 shadow-md overflow-hidden">
         <div>
